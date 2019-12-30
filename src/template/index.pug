@@ -2,8 +2,12 @@ extends ../shared/template/layout/_default
 
 block vars
   -
-    var title = '上書き'
+    var title = 'text-slide'
 
 block main
-  main
-    canvas#js-canvas
+  .test
+    .text-slide-wrap
+      .text-slide-inner
+        .text.current slide 1
+        .text slide 2
+        .text slide 3
