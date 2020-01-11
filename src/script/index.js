@@ -1,5 +1,5 @@
 import { makeArray } from './_make-array';
-import { TweenMax } from 'gsap';
+import gsap from 'gsap';
 
 (() => {
   window.addEventListener('DOMContentLoaded', () => {
@@ -23,7 +23,7 @@ import { TweenMax } from 'gsap';
 
       // 繰り返し処理をさせる
       const ticker = () => {
-        const distanc = 10000;
+        const distanc = 1000;
         window.requestAnimationFrame(ticker);
 
         // 間引き
@@ -40,15 +40,17 @@ import { TweenMax } from 'gsap';
 
           _el.forEach((r, i) => {
             if (i === count) {
-              TweenMax.set(r, {
+              gsap.set(r, {
                 y: '100%'
               });
 
-              TweenMax.to(r, 1, {
+              gsap.to(r, {
+                duration: 0.5,
                 y: '0%'
               });
             } else {
-              TweenMax.to(r, 1, {
+              gsap.to(r, {
+                duration: 0.5,
                 y: '-105%'
               });
             }
